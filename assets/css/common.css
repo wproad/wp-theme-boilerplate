@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@config "../../tailwind.config.js";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-n-1: #2d2d2d;
+    --color-n-2: #aaaaaa;
+    --color-n-3: #e2e8ec;
+    --color-n-4: hsl(0, 0%, 43%);
+    --color-n-5: #e9eaf2;
+    --color-n-6: #faf8fb;
+    --color-n-7: #141414;
+    --color-n-8: #323232;
+    --color-n-9: #a2a2a2;
+    --color-n-10: #c6c6c6;
+    --color-n-11: #dfe0e8;
+    --color-n-12: #e3eaee;
+    --color-primary-100: #fc7d51;
+    --color-primary-200: #f97316;
+    --color-bluegray-50: hsl(202, 28%, 95%);
+    --color-bluegray-100: hsl(202, 28%, 85%);
+    --color-bluegray-200: hsl(202, 28%, 70%);
+    --color-bluegray-300: hsl(202, 28%, 55%);
+    --color-bluegray-400: hsl(202, 28%, 44%);
+    --color-bluegray-500: hsl(202, 28%, 34%); /* #405e70 */
+    --color-bluegray-600: hsl(202, 28%, 28%);
+    --color-bluegray-700: hsl(202, 28%, 22%);
+    --color-bluegray-800: hsl(202, 28%, 16%);
+    --color-bluegray-900: hsl(202, 28%, 10%);
+    --color-cherry-50: hsl(351, 72%, 95%);
+    --color-cherry-100: hsl(351, 70%, 86%);
+    --color-cherry-200: hsl(351, 68%, 76%);
+    --color-cherry-300: hsl(351, 66%, 66%);
+    --color-cherry-400: hsl(351, 65%, 59%);
+    --color-cherry-500: hsl(351, 65%, 52%); /*  #d53951 */
+    --color-cherry-600: hsl(351, 65%, 45%);
+    --color-cherry-700: hsl(351, 65%, 38%);
+    --color-cherry-800: hsl(351, 65%, 31%);
+    --color-cherry-900: hsl(351, 65%, 24%);
+    --breakpoint-xs: 26rem;
+    --shadow-main: 0 20.8px 31.59px -3.19px rgba(0, 0, 0, 0.15);
+    --radius-1-5xl: 0.875rem;
+    --radius-2-5xl: 1.125rem;
+    --font-yekan: "Yekan Bakh VF", "sans-serif";
+    --default-transition-duration: 200ms;
+    --animate-wiggle: wiggle 500ms ease-in-out both;
+
+    @keyframes wiggle {
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(7deg);
+        }
+        50% {
+            transform: rotate(-7deg);
+        }
+        75% {
+            transform: rotate(1deg);
+        }
+    }
+
+    @keyframes fadeInModal {
+        from {
+            opacity: 0;
+            transform: translateY(-16px);
+            visibility: hidden;
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+    }
+
+    @keyframes fadeOutModal {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+        to {
+            opacity: 0;
+            transform: translateY(-16px);
+            visibility: hidden;
+        }
+    }
+}
+
+@theme inline {
+    --color-background: var(--color-n-6);
+    --color-background-dark: var(--color-black);
+    --color-default-ring: var(--color-violet-500);
+    --color-error: var(--color-red-600);
+
+    --color-hover: var(--color-bluegray-500);
+    --color-hover-dark: #7db6b8;
+}
+
+:root {
+    --container-max: 1476px;
+    --conatiner-padding: 16px;
+}
+
+@layer base {}
+
+@layer utilities {}
+
+@layer components {}
