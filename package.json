@@ -1,0 +1,37 @@
+{
+  "name": "minimal-wp-webpack-tailwind",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "watch:css:single": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/single.min.css --watch",
+    "watch:css:home": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/home.min.css --watch",
+
+    "build:css:single": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/css/single.min.css --minify",
+    "build:css:home": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/css/home.min.css --minify",
+    "build:css:all": "npm run build:css:single && npm run build:css:home",
+
+    "build:js:watch": "webpack --mode development --watch",
+    "build:js:dev": "webpack --mode development",
+    "build:js:prod": "webpack --mode production"
+
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.25.4",
+    "babel-loader": "^8.0.0",
+    "@tailwindcss/cli": "^4.1.12",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/postcss": "^4.1.16",
+    "autoprefixer": "^10.4.21",
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.1",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.1.1",
+    "tailwindcss": "^4.1.16",
+    "terser-webpack-plugin": "^5.3.14",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "swiper": "^11.2.8"
+  }
+}

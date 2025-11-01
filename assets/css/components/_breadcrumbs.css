@@ -1,0 +1,64 @@
+/* Breadcrumbs Component Styles */
+.breadcrumbs {
+  @apply mt-10 mb-0 lg:my-11 pb-1 border-b border-n-11 dark:border-n-8;
+}
+
+.breadcrumbs ul {
+  @apply flex items-center gap-2.5 py-2 text-n-4 dark:text-n-9;
+}
+
+.breadcrumbs li {
+  @apply flex items-center gap-2.5;
+}
+
+.breadcrumbs li.active {
+  @apply text-n-1 dark:text-white;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: '';
+  @apply ml-2.5;
+}
+
+/* Yoast SEO Breadcrumb Overrides */
+.breadcrumbs {
+  @apply flex items-center gap-2.5 py-2 text-n-4 dark:text-n-9;
+}
+
+.breadcrumbs a {
+  @apply transition-colors;
+}
+
+.breadcrumbs a:hover {
+  @apply text-hover dark:text-hover-dark;
+}
+
+.breadcrumbs a:hover svg {
+  @apply !text-hover dark:!text-hover-dark;
+}
+
+/* Handle nested span structure */
+.breadcrumbs span {
+  @apply flex items-center gap-2.5;
+}
+
+/* Last breadcrumb item styling */
+.breadcrumbs .breadcrumb_last {
+  @apply text-n-1 dark:text-white;
+}
+
+/* Separator styling */
+.breadcrumbs svg {
+  @apply text-n-4 dark:text-n-9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .breadcrumbs {
+    @apply mt-8 mb-0;
+  }
+  
+  .breadcrumbs ul {
+    @apply gap-2;
+  }
+}
