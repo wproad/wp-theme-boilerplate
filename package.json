@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "watch:css:single": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/single.min.css --watch",
-    "watch:css:home": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/home.min.css --watch",
+    "watch:css:single": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/css/single.min.css --watch",
+    "watch:css:home": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/css/home.min.css --watch",
 
     "build:css:single:dev": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/css/single.min.css",
     "build:css:home:dev": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/css/home.min.css",
