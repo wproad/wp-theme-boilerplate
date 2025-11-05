@@ -5,30 +5,24 @@
   "scripts": {
     "watch:css:single": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/css/single.min.css --watch",
     "watch:css:home": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/css/home.min.css --watch",
-
     "build:css:single:dev": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/css/single.min.css",
     "build:css:home:dev": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/css/home.min.css",
     "build:css:all:dev": "npm run build:css:single:dev && npm run build:css:home:dev",
-
     "build:css:single:prod": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/css/single.min.css --minify",
     "build:css:home:prod": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/css/home.min.css --minify",
     "build:css:all:prod": "npm run build:css:single && npm run build:css:home",
-
     "build:js:watch": "webpack --mode development --watch",
     "build:js:dev": "webpack --mode development",
     "build:js:prod": "webpack --mode production",
-
     "build:full:dev": "npm run build:css:all:dev && npm run build:js:dev"
-
-
   },
   "devDependencies": {
     "@babel/preset-env": "^7.25.4",
-    "babel-loader": "^8.0.0",
     "@tailwindcss/cli": "^4.1.12",
-    "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/postcss": "^4.1.16",
+    "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.21",
+    "babel-loader": "^8.0.0",
     "css-loader": "^7.1.2",
     "mini-css-extract-plugin": "^2.9.1",
     "postcss": "^8.5.6",
