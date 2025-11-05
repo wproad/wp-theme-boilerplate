@@ -88,7 +88,7 @@ npm run build:js:watch
 wp-theme-boilerplate/
 ├── assets/                    # Source files
 │   ├── css/
-│   │   ├── common.css        # Global/common styles
+│   │   ├── common.css        # Global styles & Tailwind v4 config
 │   │   ├── components/       # Reusable CSS components
 │   │   │   └── _breadcrumbs.css
 │   │   └── pages/           # Page-specific styles
@@ -128,7 +128,6 @@ wp-theme-boilerplate/
 ├── single.php               # Single post template
 ├── style.css                # Theme stylesheet (WordPress header)
 ├── webpack.config.js        # Webpack configuration
-├── tailwind.config.js       # Tailwind CSS configuration
 ├── postcss.config.js        # PostCSS configuration
 └── package.json             # Node.js dependencies and scripts
 ```
@@ -158,11 +157,13 @@ The `webpack.config.js` file configures:
 
 ### Tailwind Configuration
 
-The `tailwind.config.js` file:
+Tailwind CSS v4 uses CSS-based configuration in `assets/css/common.css`:
 
+- **Plugin declaration**: `@plugin "@tailwindcss/typography"` directive
+- **Custom typography**: Custom `prose-pink` utility class defined with `@utility` directive
+- **Theme customization**: Custom colors, fonts, and design tokens defined in `@theme` block
+- **Custom variants**: Dark mode variant defined with `@custom-variant` directive
 - **Content paths**: Scans `.php` files, `assets/**/*.js`, `assets/**/*.html`
-- **Custom typography**: Extended typography plugin with custom prose styles
-- **Plugins**: Typography, PostCSS, and Autoprefixer
 
 ### Asset Enqueuing
 
@@ -178,6 +179,7 @@ The `includes/Assets.php` class handles automatic asset loading:
 ### Build Process
 
 1. **JavaScript Bundling**:
+
    - Webpack processes entry points (`home.js`, `single.js`)
    - Babel transpiles modern JavaScript for browser compatibility
    - Terser minifies and optimizes in production
@@ -186,6 +188,7 @@ The `includes/Assets.php` class handles automatic asset loading:
 
 2. **CSS Processing**:
    - Tailwind CLI processes CSS files from `assets/css/pages/`
+   - `common.css` contains Tailwind v4 configuration (plugins, theme, utilities)
    - PostCSS applies Tailwind directives and autoprefixes
    - Minification in production mode
    - Outputs to `dist/css/[name].min.css`
@@ -193,6 +196,7 @@ The `includes/Assets.php` class handles automatic asset loading:
 ### Runtime Asset Loading
 
 1. **Theme Initialization**:
+
    - `functions.php` loads the `Assets` class singleton
    - Theme constants defined (THEME_PATH, THEME_URI, THEME_VERSION)
 
@@ -206,6 +210,7 @@ The `includes/Assets.php` class handles automatic asset loading:
 ### Development vs Production
 
 - **Development mode**:
+
   - Source maps enabled for debugging
   - Unminified output (easier debugging)
   - Version uses timestamp for cache busting
@@ -222,7 +227,7 @@ The `includes/Assets.php` class handles automatic asset loading:
 - **Page-specific code**: Place CSS/JS in corresponding `assets/css/pages/` or `assets/js/pages/` files
 - **Reusable components**: Add to `assets/css/components/` or `assets/js/components/`
 - **Utilities**: Shared helper functions go in `assets/js/utils/`
-- **Common styles**: Global styles go in `assets/css/common.css`
+- **Common styles**: Global styles and Tailwind configuration go in `assets/css/common.css`
 
 ## License
 
