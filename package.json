@@ -6,13 +6,20 @@
     "watch:css:single": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/single.min.css --watch",
     "watch:css:home": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/home.min.css --watch",
 
-    "build:css:single": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/css/single.min.css --minify",
-    "build:css:home": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/css/home.min.css --minify",
-    "build:css:all": "npm run build:css:single && npm run build:css:home",
+    "build:css:single:dev": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/css/single.min.css",
+    "build:css:home:dev": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/css/home.min.css",
+    "build:css:all:dev": "npm run build:css:single:dev && npm run build:css:home:dev",
+
+    "build:css:single:prod": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/css/single.min.css --minify",
+    "build:css:home:prod": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/css/home.min.css --minify",
+    "build:css:all:prod": "npm run build:css:single && npm run build:css:home",
 
     "build:js:watch": "webpack --mode development --watch",
     "build:js:dev": "webpack --mode development",
-    "build:js:prod": "webpack --mode production"
+    "build:js:prod": "webpack --mode production",
+
+    "build:full:dev": "npm run build:css:all:dev && npm run build:js:dev"
+
 
   },
   "devDependencies": {
