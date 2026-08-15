@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@config "../../tailwind.config.js";
+
+@source "../../**/*.php";
+@source "../../*.php";
+@source "../../assets/**/*.js";
+@source "../../**/*.html";
+
+@import "./components/_toast.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 

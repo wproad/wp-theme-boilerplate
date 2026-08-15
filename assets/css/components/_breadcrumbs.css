@@ -1,3 +1,5 @@
+@reference "../common.css";
+
 /* Breadcrumbs Component Styles */
 .breadcrumbs {
   @apply mt-10 mb-0 lg:my-11 pb-1 border-b border-n-11 dark:border-n-8;

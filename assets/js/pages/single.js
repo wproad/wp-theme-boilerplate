@@ -1,7 +1,6 @@
-import "../components/dropdown"
-import "../components/theme-switcher"
+import { initCommonSwipers, initGallerySwipers } from "../components/sliders/init-swipers";
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  initCommonSwipers();
+  initGallerySwipers();
 });
-
-

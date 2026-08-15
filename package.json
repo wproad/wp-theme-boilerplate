@@ -1,37 +1,48 @@
 {
   "name": "minimal-wp-webpack-tailwind",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
-    "watch:css:single": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/single.min.css --watch",
-    "watch:css:home": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/home.min.css --watch",
+    "watch:css:common": "tailwindcss -i ./assets/css/common.css -o ./dist/dev/css/common.min.css --watch",
+    "watch:css:home": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/dev/css/home.min.css --watch",
+    "watch:css:single": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/dev/css/single.min.css --watch",
+    "watch:css:page": "tailwindcss -i ./assets/css/pages/page.css -o ./dist/dev/css/page.min.css --watch",
+    "watch:css:archive": "tailwindcss -i ./assets/css/pages/archive.css -o ./dist/dev/css/archive.min.css --watch",
+    "watch:css:search": "tailwindcss -i ./assets/css/pages/search.css -o ./dist/dev/css/search.min.css --watch",
+    "watch:css:all": "npm run watch:css:common & npm run watch:css:home & npm run watch:css:single & npm run watch:css:page & npm run watch:css:archive & npm run watch:css:search",
 
-    "build:css:single": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/css/single.min.css --minify",
-    "build:css:home": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/css/home.min.css --minify",
-    "build:css:all": "npm run build:css:single && npm run build:css:home",
+    "build:css:common:prod": "tailwindcss -i ./assets/css/common.css -o ./dist/prod/css/common.min.css --minify",
+    "build:css:home:prod": "tailwindcss -i ./assets/css/pages/home.css -o ./dist/prod/css/home.min.css --minify",
+    "build:css:single:prod": "tailwindcss -i ./assets/css/pages/single.css -o ./dist/prod/css/single.min.css --minify",
+    "build:css:page:prod": "tailwindcss -i ./assets/css/pages/page.css -o ./dist/prod/css/page.min.css --minify",
+    "build:css:archive:prod": "tailwindcss -i ./assets/css/pages/archive.css -o ./dist/prod/css/archive.min.css --minify",
+    "build:css:search:prod": "tailwindcss -i ./assets/css/pages/search.css -o ./dist/prod/css/search.min.css --minify",
+    "build:css:all:prod": "npm run build:css:common:prod && npm run build:css:home:prod && npm run build:css:single:prod && npm run build:css:page:prod && npm run build:css:archive:prod && npm run build:css:search:prod",
 
     "build:js:watch": "webpack --mode development --watch",
     "build:js:dev": "webpack --mode development",
-    "build:js:prod": "webpack --mode production"
+    "build:js:prod": "webpack --mode production",
 
+    "dev": "npm run watch:css:all & npm run build:js:watch",
+    "build": "npm run build:css:all:prod && npm run build:js:prod"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.25.4",
-    "babel-loader": "^8.0.0",
-    "@tailwindcss/cli": "^4.1.12",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/postcss": "^4.1.16",
-    "autoprefixer": "^10.4.21",
+    "@babel/preset-env": "^7.28.5",
+    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.23",
+    "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
-    "mini-css-extract-plugin": "^2.9.1",
+    "mini-css-extract-plugin": "^2.9.4",
     "postcss": "^8.5.6",
-    "postcss-loader": "^8.1.1",
-    "tailwindcss": "^4.1.16",
-    "terser-webpack-plugin": "^5.3.14",
-    "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
+    "postcss-loader": "^8.2.0",
+    "tailwindcss": "^4.1.18",
+    "terser-webpack-plugin": "^5.3.16",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
   },
   "dependencies": {
-    "swiper": "^11.2.8"
+    "swiper": "^12.0.3"
   }
 }

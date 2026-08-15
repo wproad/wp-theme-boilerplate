@@ -1,10 +1,6 @@
-// Home page specific JS
-import {initCommonSwipers} from "../components/init-swipers";
-import "../components/dropdown"
-import "../components/theme-switcher"
+import { initCarouselSwipers, initCommonSwipers } from "../components/sliders/init-swipers";
 
-document.addEventListener('DOMContentLoaded', () => {
-	initCommonSwipers()
+document.addEventListener("DOMContentLoaded", () => {
+  initCommonSwipers();
+  initCarouselSwipers();
 });
-
-

@@ -1,4 +1,4 @@
-@import "../common.css";
+@reference "../common.css";
 
 @import "swiper/css";
 @import "swiper/css/navigation";

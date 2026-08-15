@@ -14,7 +14,7 @@
 	<?php the_posts_pagination(); ?>
 
 <?php else : ?>
-	<p><?php esc_html_e('No posts found.', 'minimal-wp-webpack-tailwind'); ?></p>
+	<p><?php esc_html_e( 'No posts found.', 'sepid' ); ?></p>
 <?php endif; ?>
 </section>
 

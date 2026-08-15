@@ -9,7 +9,7 @@
 	</article>
 	<?php comments_template(); ?>
 <?php endwhile; else : ?>
-	<p><?php esc_html_e('Nothing found.', 'minimal-wp-webpack-tailwind'); ?></p>
+	<p><?php esc_html_e( 'Nothing found.', 'sepid' ); ?></p>
 <?php endif; ?>
 
 <?php get_footer(); ?>
